@@ -6,6 +6,7 @@
  *
  * Return: None
  */
+
 void print_binary(unsigned long int n)
 {
 	int i, count = 0;
