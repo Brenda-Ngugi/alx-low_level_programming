@@ -1,0 +1,19 @@
+#Makefile for making the school executable
+#Set the compiler to use:
+CC = gcc
+
+#SRC sets the Source files
+SRC = main.c school.c
+
+#phony declares all files generated outdated.
+#Enables compilation even if the file already exists
+.PHONY: all clean
+
+#Set the executable name
+all: school
+
+school: $(SRC)
+	$(CC) -o school $(SRC)
+
+clean:
+	rm -f school

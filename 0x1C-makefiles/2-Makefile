@@ -1,0 +1,17 @@
+#Makefile for school executable
+
+#Sets the compilee to use
+CC = gcc
+
+#Set the source files to use (.c)
+SRC = main.c school.c
+
+#Sets the object files (.o)
+OBJ = $(SRC:.c=.o)
+
+#sets the executable file name
+NAME = school
+
+#Rule
+all: $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)

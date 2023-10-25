@@ -1,0 +1,32 @@
+#Makefile for school executable
+
+#Sets the compilee to use
+CC = gcc
+
+#Set the source files to use (.c)
+SRC = main.c school.c
+
+#Sets the object files (.o)
+OBJ = $(SRC:.c=.o)
+
+#sets the executable file name
+NAME = school
+
+#Set flags to use in compilation
+CFLAGS = -Wall -Werror -Wextra -pedantic
+
+#set auto cleanup of generaed files
+.PHONY: all clean oclean fclean re
+
+#Rules
+all:  m.h $(OBJ)
+        $(CC) $(OBJ) -o $(NAME)
+
+clean:
+        $(RM) *~ $(NAME)
+
+oclean:
+        $(RM) $(OBJ)
+
+fclean: clean oclean
+re: oclean all
